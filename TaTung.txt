@@ -7,8 +7,23 @@ sdfsdfsdf
 sdfsdfsdf
 somkiat
 
+<<<<<<< HEAD
 fjsadhfjkh   askldfhkjssomkiat
 rtwret
+=======
+<<<<<<< HEAD
+fjsadhfjkhaskldfhkjs
+hkjfhsdalkjhflkjhasjdfhlk   lllllllllllllllllllll  By Book
+
+KKK
+
+test  config
+llllllllllllllll oooo
+
+Boooooooooooooooooooooooooooookkkkkk
+=======
+fjsadhfjkhaskldfhkjssomkiat
+>>>>>>> 23c5f872766763df82998e1fcaefb3483b0f7d37
 hkjfhsdalkjhflkjhasjdfhlksomkiat
 
 KKKdvczxcvsdf
@@ -185,3 +200,4 @@ sdg
 sdg
 sdg
 sdg
+>>>>>>> 115659d131943e55a0d48f9f190d35048cefaee6
