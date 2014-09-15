@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 1111111111111111111111111111111111
 
+=======
+somkiat somkiat
+>>>>>>> 115659d131943e55a0d48f9f190d35048cefaee6
 JJJJJJJJJJJJJJJJJJJJJJJJJJdsfdfsdfsdf
 sdfsdfsdfsdf
 sdfsdfsdf
 sdfsdfsdfsdf
 sdfsdfsdf
 sdfsdfsdf
+somkiat
 
-fjsadhfjkhaskldfhkjs
-hkjfhsdalkjhflkjhasjdfhlk
+fjsadhfjkhaskldfhkjssomkiat
+hkjfhsdalkjhflkjhasjdfhlksomkiat
 
 KKKdvczxcvsdf
 s
