@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+1111111111111111111111111111111111
+
+=======
 somkiat somkiat
+>>>>>>> 115659d131943e55a0d48f9f190d35048cefaee6
 JJJJJJJJJJJJJJJJJJJJJJJJJJdsfdfsdfsdf
 sdfsdfsdfsdf
 sdfsdfsdf
@@ -7,6 +12,10 @@ sdfsdfsdf
 sdfsdfsdf
 somkiat
 
+<<<<<<< HEAD
+fjsadhfjkh   askldfhkjssomkiat
+rtwret
+=======
 <<<<<<< HEAD
 fjsadhfjkhaskldfhkjs
 hkjfhsdalkjhflkjhasjdfhlk   lllllllllllllllllllll  By Book
@@ -22,6 +31,7 @@ llllllllllllllll oooo
 Boooooooooooooooooooooooooooookkkkkk
 =======
 fjsadhfjkhaskldfhkjssomkiat
+>>>>>>> 23c5f872766763df82998e1fcaefb3483b0f7d37
 hkjfhsdalkjhflkjhasjdfhlksomkiat
 
 KKKdvczxcvsdf
@@ -44,8 +54,25 @@ gs
 d
 fs
 df
+ertr
 s
 df
+sdg
+sd
+g
+ewtte
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gs
+d
+fs
+df
+s
+df
+ret
 sdg
 sd
 g
@@ -64,17 +91,8 @@ sdg
 sd
 g
 sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
-
-
-KKKdvczxcvsdf
-s
-gs
-d
-fs
-df
-s
-df
 sdg
+sdsdgsdg
 sd
 g
 sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
@@ -83,8 +101,61 @@ sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
 KKKdvczxcvsdf
 s
 gs
+sd
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gssdg
+sdsdg
+sd
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gs
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gs
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gssdg
+sd
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gssdg
+sd
+g
+sdgJJJJJJJJJJJJJJJJJJJJJJJJJJ
+
+
+KKKdvczxcvsdf
+s
+gs
+
+KKKdvczxcvsdf
+s
+gs
 d
 fs
+eetwe
+ewrtreewte
 df
 s
 df
