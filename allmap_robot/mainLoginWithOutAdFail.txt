@@ -1,0 +1,47 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+
+*** Testcases ***
+Login ALLMAP
+	open web ALLMAP
+	input username and password
+	select domain
+	click login
+	check menu
+	check popup layer
+
+*** Keywords ***
+open web ALLMAP
+	Open Browser    http://192.168.100.5:8080/allmap
+
+input username and password
+	Input Text    username    thanarat
+	Input Password    password    yg1234
+
+select domain
+	Select From List By Label    domain    OTHER
+
+click login
+	Click Button    loginButton
+
+check menu
+	Page Should Not Contain    การบริหารจัดการสิทธิ
+	
+check popup layer
+	Page Should Not Contain    คู่แข่ง
+	Page Should Not Contain    ปั๊มน้ำมัน
+	Page Should Not Contain    สถานีขนส่ง
+	Page Should Not Contain    สถานศึกษา
+	Page Should Not Contain    โรงพยาบาล
+	Page Should Not Contain    ตลาด
+	Page Should Not Contain    building block
+	Page Should Not Contain    ทำเลศักยภาพ
+	Page Should Not Contain    สถานบันเทิง
+	Page Should Not Contain    วินมอเตอร์ไซค์,ท่ารถ
+	Page Should Not Contain    สถานที่ราชการ
+	Page Should Not Contain    จุดซ่อมถนน
+	Page Should Not Contain    โรงงานอุตสาหกรรม
+	Page Should Not Contain    อาคารสำนักงาน
+	Page Should Not Contain    จุดกลับรถ
