@@ -1,0 +1,7 @@
+.metadata/
+RemoteSystemsTempFiles/
+allmap/.classpath
+allmap/.project
+allmap/.settings/
+allmap/target/
+allmap_robot/.project
