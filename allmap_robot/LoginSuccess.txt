@@ -56,3 +56,5 @@ Locationเข้าสู่หน้าจอ Menu
 	Xpath Should Match X Times    //div[@id='my_element']    15
 Location ปิดหน้าจอ
 	Close Browser
+
+	
