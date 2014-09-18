@@ -27,6 +27,7 @@ public class User {
 			
 			if(rs.next()) {
 				userBean = new UserBean();
+				userBean.setUserId(rs.getInt("USER_ID"));
 				userBean.setUsername(rs.getString("USER_NAME"));
 				userBean.setDomainId(rs.getString("DOMAIN_ID"));
 				userBean.setFirstName(rs.getString("FIRSTNAME"));

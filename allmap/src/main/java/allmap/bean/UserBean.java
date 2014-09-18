@@ -1,5 +1,7 @@
 package allmap.bean;
 
+import java.util.List;
+
 public class UserBean {
 
 	private Integer userId;
@@ -10,6 +12,7 @@ public class UserBean {
 	private String domainId;
 	private boolean external;
 	
+	private List<LayerBean> lstLayer;
 	
 	public Integer getUserId() {
 		return userId;
@@ -53,5 +56,12 @@ public class UserBean {
 	public void setExternal(boolean external) {
 		this.external = external;
 	}
+	public List<LayerBean> getLstLayer() {
+		return lstLayer;
+	}
+	public void setLstLayer(List<LayerBean> lstLayer) {
+		this.lstLayer = lstLayer;
+	}
+
 	
 }
