@@ -42,7 +42,7 @@ public class LdapServiceTest {
 		List<String> expectedMenuList = new ArrayList<String>();
 		List<String> resultMenuList = new ArrayList<String>();
 		expectedMenuList.add("Home");
-		expectedMenuList.add("�����èѴ����y�");
+		expectedMenuList.add("การบริหารจัดการสิทธิ์");
 		
 		resultMenuList = loginAuthen.checkMenu(usernameAdmin, domain);
 		
