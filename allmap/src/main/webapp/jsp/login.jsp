@@ -34,7 +34,7 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 				<div class="col-sm-7">
 				<div class="btn-group btn-input clearfix" style="width: 190px">
 					  <button id="domain_id" type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
-					    <span data-bind="label">กรณาเลือก</span> <span class="caret"></span>
+					    <span data-bind="label">CPALL</span> <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu" role="menu">
 					    <li id="cpall"><a href="#">CPALL</a></li>
@@ -45,7 +45,7 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-7">
-					<button type="button" class="btn btn-lg btn-primary btn-block" onClick="location.href='../jsp/bench.jsp'">login</button> 
+					<button id="idButton" type="button" class="btn btn-lg btn-primary btn-block" onClick="location.href='../jsp/bench.jsp'">login</button> 
 				</div>
 			</div>
 		</div>
