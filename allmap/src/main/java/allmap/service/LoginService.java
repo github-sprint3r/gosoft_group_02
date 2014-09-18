@@ -6,7 +6,7 @@ public class LoginService {
 
 	public UserBean login(String username, String password, String domain){
 		UserService userService = new UserService();
-		return userService.authenUser(username, password);
+		return userService.authenUser(username, password, domain);
 	}
 
 }
