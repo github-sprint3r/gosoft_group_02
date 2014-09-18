@@ -22,9 +22,9 @@
          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b>Menu </b>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="right: 0; left: auto;">
                <li><a href="#">HOME</a></li>
-               <li><a href="#">การบริหารจัดการสิทธิ์</a></li>          
+               <li><a href="#">การบริหารจัดการสิทธิ์</a></li>          
             </ul>
          </li>
       </ul>

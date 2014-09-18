@@ -33,12 +33,12 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 				<label class="col-sm-3 control-labeln" >Domain</label>
 				<div class="col-sm-7">
 				<div class="btn-group btn-input clearfix" style="width: 190px">
-					  <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
-					    <span data-bind="label">กรุณาเลือก</span> <span class="caret"></span>
+					  <button id="domain_id" type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
+					    <span data-bind="label">กรณาเลือก</span> <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu" role="menu">
-					    <li><a href="#">CPALL</a></li>
-					    <li><a href="#">OTHER</a></li>
+					    <li id="cpall"><a href="#">CPALL</a></li>
+					    <li id="other"><a href="#">OTHER</a></li>
 					  </ul>
 				</div>
 			   </div>
