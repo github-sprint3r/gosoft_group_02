@@ -1,5 +1,6 @@
 package allmap.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -7,18 +8,23 @@ import java.util.List;
 
 import org.junit.Test;
 
+import allmap.constant.Constant;
+
 
 public class LdapServiceTest {
 
 	LdapService ldapService = new LdapService();
 	String domainId = "1"; // CPALL
 	String usernameAdmin = "sukit";
+	String usernameAdminIncorrect = "sukits";
 	String passwordAdmin = "sk12345";
 	String usernameLocation = "thanakrit";
+	String usernameLocationIncorrect = "thanakrits";
 	String passwordLocation = "1234";
+	String passwordIncorect = "1";
 	
 	@Test
-	public void admin_login_should_success() {
+	public void admin_login_correct_should_success() {
 		try {
 			ldapService.authenUser(usernameAdmin, passwordAdmin, domainId);
 		} catch (Exception ex) {
@@ -27,13 +33,41 @@ public class LdapServiceTest {
 	}
 	
 	@Test
-	public void location_login_should_success() {
+	public void location_login_correct_should_success() {
 		try {
 			ldapService.authenUser(usernameLocation, passwordLocation, domainId);
 		} catch (Exception ex) {
 			fail(ex.getMessage());
 		}
 	}
+	
+	@Test
+	public void admin_login_incorrect_password_should_unsuccess() {
+		try {
+			ldapService.authenUser(usernameAdmin, passwordIncorect, domainId);
+		} catch (Exception ex) {
+			assertEquals(Constant.EXCEPTION_CODE_LOGIN_INVALID_PASSWORD, ex.getMessage());
+		}
+	}
+
+	@Test
+	public void location_login_incorrect_password_should_unsuccess() {
+		try {
+			ldapService.authenUser(usernameLocation, passwordIncorect, domainId);
+		} catch (Exception ex) {
+			assertEquals(Constant.EXCEPTION_CODE_LOGIN_INVALID_PASSWORD, ex.getMessage());
+		}
+	}
+	
+	
+//	@Test
+//	public void admin_login_incorrect_username_should_unsuccess() {
+//		try {
+//			ldapService.authenUser(usernameAdminIncorrect, passwordAdmin, domainId);
+//		} catch (Exception ex) {
+//			assertEquals(Constant.EXCEPTION_CODE_LOGIN_INVALID_USERNAME, ex.getMessage());
+//		}
+//	}
 	
 //
 //	@Test
