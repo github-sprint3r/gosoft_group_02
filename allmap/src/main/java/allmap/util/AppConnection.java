@@ -23,7 +23,7 @@ public class AppConnection {
 
 		try {
 			//Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://saavik/som_allmap?" +
+			conn = DriverManager.getConnection("jdbc:mysql://192.168.100.9/som_allmap?" +
 		                                   "user=som_allmap&password=som_allmap");
 
 		    // Do something with the Connection
