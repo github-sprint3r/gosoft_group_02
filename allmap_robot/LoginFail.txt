@@ -8,39 +8,39 @@ ${URL}    http://192.168.100.9:8080/allmap/
 เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Admin : Password ผิด
 	Admin : Password ผิด เข้า web
 	Admin : Password ผิด ใส่ Username & password 
-	Admin : Password ผิด เลือก Domain
-	Admin : Password ผิด กดปุ่ม LOG IN
-	Admin : Password ผิด แสดง ERROR
-	Admin : Password ผิด กดปุ่ม OK 
-	Admin : Password ผิด Clear ค่า Username & password & Domain ทั้งหมด
-	Admin : Password ผิด ปิดหน้าจอ
-เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Location : Password ผิด
-	Location : Password ผิด เข้า web
-	Location : Password ผิด ใส่ Username & password 
-	Location : Password ผิด เลือก Domain
-	Location : Password ผิด กดปุ่ม LOG IN
-	Location : Password ผิด แสดง ERROR
-	Location : Password ผิด กดปุ่ม OK 
-	Location : Password ผิด Clear ค่า Username & password & Domain ทั้งหมด
-	Location : Password ผิด ปิดหน้าจอ
-เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Admin : Username ผิด
-	Admin : Username ผิด เข้า web
-	Admin : Username ผิด ใส่ Username & password 
-	Admin : Username ผิด เลือก Domain
-	Admin : Username ผิด กดปุ่ม LOG IN
-	Admin : Username ผิด แสดง ERROR
-	Admin : Username ผิด กดปุ่ม OK 
-	Admin : Username ผิด Clear ค่า Username & password & Domain ทั้งหมด
-	Admin : Username ผิด ปิดหน้าจอ
-เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Location : Username ผิด
-	Location : Username ผิด เข้า web
-	Location : Username ผิด ใส่ Username & password 
-	Location : Username ผิด เลือก Domain
-	Location : Username ผิด กดปุ่ม LOG IN
-	Location : Username ผิด แสดง ERROR
-	Location : Username ผิด กดปุ่ม OK 
-	Location : Username ผิด Clear ค่า Username & password & Domain ทั้งหมด
-	Location : Username ผิด ปิดหน้าจอ
+	#Admin : Password ผิด เลือก Domain
+	#Admin : Password ผิด กดปุ่ม LOG IN
+	#Admin : Password ผิด แสดง ERROR
+	#Admin : Password ผิด กดปุ่ม OK 
+	#Admin : Password ผิด Clear ค่า Username & password & Domain ทั้งหมด
+	#Admin : Password ผิด ปิดหน้าจอ
+#เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Location : Password ผิด
+	#Location : Password ผิด เข้า web
+	#Location : Password ผิด ใส่ Username & password 
+	#Location : Password ผิด เลือก Domain
+	#Location : Password ผิด กดปุ่ม LOG IN
+	#Location : Password ผิด แสดง ERROR
+	#Location : Password ผิด กดปุ่ม OK 
+	#Location : Password ผิด Clear ค่า Username & password & Domain ทั้งหมด
+	#Location : Password ผิด ปิดหน้าจอ
+#เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Admin : Username ผิด
+	#Admin : Username ผิด เข้า web
+	#Admin : Username ผิด ใส่ Username & password 
+	#Admin : Username ผิด เลือก Domain
+	#Admin : Username ผิด กดปุ่ม LOG IN
+	#Admin : Username ผิด แสดง ERROR
+	#Admin : Username ผิด กดปุ่ม OK 
+	#Admin : Username ผิด Clear ค่า Username & password & Domain ทั้งหมด
+	#Admin : Username ผิด ปิดหน้าจอ
+#เข้าสู่ระบบ All Map success LOG IN ผ่าน AD >> Role Location : Username ผิด
+	#Location : Username ผิด เข้า web
+	#Location : Username ผิด ใส่ Username & password 
+	#Location : Username ผิด เลือก Domain
+	#Location : Username ผิด กดปุ่ม LOG IN
+	#Location : Username ผิด แสดง ERROR
+	#Location : Username ผิด กดปุ่ม OK 
+	#Location : Username ผิด Clear ค่า Username & password & Domain ทั้งหมด
+	#Location : Username ผิด ปิดหน้าจอ
 	
 *** Keywords ***
 Admin : Password ผิด เข้า web
