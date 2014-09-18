@@ -5,7 +5,6 @@ allmap/.project
 allmap/.settings/
 allmap/target/
 allmap_robot/.project
-allMap/src/main/webapp/arcgis_js_api/
 Servers/
 allmap_robot/.settings/
 allmap_robot/log.html
