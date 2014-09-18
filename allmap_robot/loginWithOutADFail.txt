@@ -5,122 +5,70 @@ Library    Selenium2Library
 *** Variables ***
 *** Testcases ***
 Location Login WithOut AD Fail 5011
-
 	open allmap Web
-	input username    thanarat
-	input password    yg1234
-#	choose domain Code 5011
-#	click login button Code 5011
+	login with    thanarat    yg1234    CPALL
+#	click login button
 #	expect result Code 5011
 	Close Browser
 	
 Location Login WithOut AD Fail 5012	
-    [TAGS]    doing
 	open allmap Web 
-	input username    thanarat
-	input password    yg
-#	choose domain Code 5012
-#	click login button Code 5012
+	login with    thanarat    yg    OTHER
+#	click login button
 #	expect result Code 5012
 	Close Browser
+	
+Location Login WithOut AD Fail 5013
+
+	open allmap Web 
+	login with    thanar    yg1234    OTHER
+#	click login button
+#	expect result Code 5013
+	Close Browser
+	
+Location Login WithOut AD Fail 5014
+
+	open allmap Web 
+	login with    thanarat    yg    CPALL
+#	click login button
+#	expect result Code 5014
+	Close Browser
+	
+Location Login WithOut AD Fail 5015
+
+	open allmap Web 
+	login with    thanar    yg12345    OTHER
+#	click login button Code 5015
+#	expect result Code 5015
+	Close Browser
+	
+Location Login WithOut AD Fail 5016
+	open allmap Web 
+	login with    thanar    yg12345    CPALL
+#	click login button Code 5016
+#	expect result Code 5016
+	Close Browser
+	
+Location Login WithOut AD Fail 5017
+
+	open allmap Web 
+	login with    thanar    yg12345    OTHER
+#	click login button Code 5017
+#	expect result Code 5017
+	Close Browser
+	
+
+
 
 
 	
 *** Keywords ***
 open allmap Web
 	Open Browser    http://192.168.100.9:8080/allmap/jsp/login.jsp
-	
-input username    [Arguments]    ${username}
-	Input Text    username    ${username}
-input password    [Arguments]    ${password}
-	Input Text    password    ${password}
-choose domain Code 5011
-	Select From List    domain    CPALL
-click login button Code 5011
-	Click Button    loginButton
-expect result Code 5011
-	Wait Until Page Contains    5011
+login with
+    [Arguments]    ${username}    ${password}    ${domain}  
+	input text    username    ${username}
+	input text    password    ${password}
+	Click Button    domain_id    
+	CLick Link    ${domain}
 
-	
-open allmap Web Error Code 5012
-	Open Browser    http://192.168.100.5:8080/allmap
-input username Code 5012
-	Input Text    username    thanarat
-input password Code 5012
-	Input Text    password    yg
-choose domain Code 5012
-	Select From List    domain    OTHER
-click login button Code 5012
-	Click Button    loginButton
-expect result Code 5012
-	Wait Until Page Contains    5012
-close browser Code 5012
-	Close Browser
-	
-choose domain Code 5013
-	Select From List    domain    OTHER
-click login button Code 5013
-	Click Button    loginButton
-expect result Code 5013
-	Wait Until Page Contains    5013
-
-	
-open allmap Web Error Code 5014
-	Open Browser    http://192.168.100.5:8080/allmap
-input username Code 5014
-	Input Text    username    thanarat
-input password Code 5014
-	Input Text    password    yg
-choose domain Code 5014
-	Select From List    domain    CPALL
-click login button Code 5014
-	Click Button    loginButton
-expect result Code 5014
-	Wait Until Page Contains    5014
-close browser Code 5014
-	Close Browser	
-	
-open allmap Web Error Code 5015
-	Open Browser    http://192.168.100.5:8080/allmap
-input username Code 5015
-	Input Text    username    thanar
-input password Code 5015
-	Input Text    password    yg12345
-choose domain Code 5015
-	Select From List    domain    OTHER
-click login button Code 5015
-	Click Button    loginButton
-expect result Code 5015
-	Wait Until Page Contains    5015
-close browser Code 5015
-	Close Browser		
-	
-open allmap Web Error Code 5016
-	Open Browser    http://192.168.100.5:8080/allmap
-input username Code 5016
-	Input Text    username    thanar
-input password Code 5016
-	Input Text    password    yg12345
-choose domain Code 5016
-	Select From List    domain    CPALL
-click login button Code 5016
-	Click Button    loginButton
-expect result Code 5016
-	Wait Until Page Contains    5016
-close browser Code 5016
-	Close Browser		
-	
-open allmap Web Error Code 5017
-	Open Browser    http://192.168.100.5:8080/allmap
-input username Code 5017
-	Input Text    username    thanar
-input password Code 5017
-	Input Text    password    yg
-choose domain Code 5017
-	Select From List    domain    CPALL
-click login button Code 5017
-	Click Button    loginButton
-expect result Code 5017
-	Wait Until Page Contains    5017
-close browser Code 5017
-	Close Browser			
