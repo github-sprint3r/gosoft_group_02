@@ -14,25 +14,32 @@
 			});
 
 	function submitLogin() {
-		if ($("#username").val() == "") {
-			alert("กรุณากรอก username");
-		} else if ($("#password").val() == "") {
-			alert("กรุณากรอก password");
-		}
+		/* 		if ($("#username").val() == "") {
+		 alert("กรุณากรอก username");
+		 return false;
+		 } else if ($("#password").val() == "") {
+		 alert("กรุณากรอก password");
+		
+		 } */
 		/* else if($("#domain").val() == "") {
 			alert("กรุณากรอก เลือก Domain");
 		} */
+/* 
+		var frmData = $("#loginfrom").serializeArray();
+		$.ajax({
+			url : "../login",
+			data : frmData,
+		}).done(function(data) {
+			alert(data);
+		}); */
 	}
-	
-	
 </script>
 
 <form class="form-horizontal" id="loginfrom" name="loginfrom">
 	<div class="container">
 		<div class="col-md-4 col-md-offset-4">
 			<!-- <h2 class="form-signin-heading">Login</h2> -->
-			<br>
-			<br>
+			<br> <br>
 			<div class="form-group">
 				<label for="username" class="col-sm-3 control-label">Username</label>
 				<div class="col-sm-7">
@@ -62,7 +69,8 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-7">
-					<button type="button" class="btn btn-lg btn-primary btn-block" onClick="submitLogin();">login</button>
+					<button type="button" id="loginButton" class="btn btn-lg btn-primary btn-block"
+						onClick="submitLogin();">LOGIN</button>
 				</div>
 			</div>
 		</div>

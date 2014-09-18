@@ -8,18 +8,18 @@ ${URL}    http://192.168.100.9:8080/allmap/
 เข้าสู่ระบบ All Map success LOG IN >> ผ่าน AD Role Admin 
     Admin เข้า web
 	Admin ใส่ Username & password 	
-	#Admin เลือก Domain
-	#Admin กดปุ่ม LOG IN
+	Admin เลือก Domain
+	Admin กดปุ่ม LOG IN
 	#Admin เข้าสู่หน้าจอ Menu
-	#Admin ปิดหน้าจอ
+	Admin ปิดหน้าจอ
 	
 #เข้าสู่ระบบ All Map success LOG IN >> ผ่าน AD Role Location
-	#Location เข้า web
-	#Location ใส่ Username & password 
-	#Location เลือก Domain
-	#Location กดปุ่ม LOG IN
+	Location เข้า web
+	Location ใส่ Username & password 
+	Location เลือก Domain
+	Location กดปุ่ม LOG IN
 	#Location เข้าสู่หน้าจอ Menu
-	#Location ปิดหน้าจอ
+	Location ปิดหน้าจอ
 	
 *** Keywords ***
 Admin เข้า web
@@ -28,9 +28,9 @@ Admin ใส่ Username & password
 	Input Text    username    sukit
 	Input Text    password    sk12345
 Admin เลือก Domain
-	Select From List By Label    domain    CPALL
+	Select From List    domain    CPALL
 Admin กดปุ่ม Login
-	Click Button    LOGIN
+	Click Button    loginButton
 Admin เข้าสู่หน้าจอ Menu 
 	Wait Until Page Contains    สุกิจ กรีเจริญ
 	Click Element    menu
@@ -39,15 +39,16 @@ Admin เข้าสู่หน้าจอ Menu
 	Xpath Should Match X Times    //div[@id='my_element']    20
 Admin ปิดหน้าจอ
 	Close Browser
+	
 Location เข้า web
 	Open Browser    ${URL}
 Location ใส่ Username & password 
 	Input Text    username    thanakrit
 	Input Text    password    1234
 Location เลือก Domain	
-	Select From List By Label    domain    CPALL
+	Select From List    domain    CPALL
 Location กดปุ่ม Login
-	Click Button    LOGIN
+	Click Button    loginButton
 Locationเข้าสู่หน้าจอ Menu 
 	Wait Until Page Contains    ธนกฤต จวนกระจ่าง
 	Click Element    menu
