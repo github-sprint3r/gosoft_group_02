@@ -60,12 +60,9 @@
 					</select>
 				</div>
 			</div>
-
-
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-7">
-					<button type="button" class="btn btn-lg btn-primary btn-block"
-						onClick="submitLogin();">login</button>
+					<button type="button" class="btn btn-lg btn-primary btn-block" onClick="submitLogin();">login</button>
 				</div>
 			</div>
 		</div>

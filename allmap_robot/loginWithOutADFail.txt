@@ -1,61 +1,43 @@
 *** Settings ***
 Library    Selenium2Library
-
-
+Test Setup    Open Browser    http://192.168.100.9:8080/allmap/jsp/login.jsp
+Test Teardown    Close Browser
 *** Variables ***
 *** Testcases ***
 Location Login WithOut AD Fail 5011
-	open allmap Web
 	login with    thanarat    yg1234    CPALL
 #	click login button
 #	expect result Code 5011
-	Close Browser
 	
 Location Login WithOut AD Fail 5012	
-	open allmap Web 
 	login with    thanarat    yg    OTHER
 #	click login button
 #	expect result Code 5012
-	Close Browser
 	
 Location Login WithOut AD Fail 5013
-
-	open allmap Web 
 	login with    thanar    yg1234    OTHER
 #	click login button
 #	expect result Code 5013
-	Close Browser
 	
 Location Login WithOut AD Fail 5014
-
-	open allmap Web 
 	login with    thanarat    yg    CPALL
 #	click login button
 #	expect result Code 5014
-	Close Browser
 	
 Location Login WithOut AD Fail 5015
-
-	open allmap Web 
 	login with    thanar    yg12345    OTHER
 #	click login button Code 5015
 #	expect result Code 5015
-	Close Browser
 	
 Location Login WithOut AD Fail 5016
-	open allmap Web 
 	login with    thanar    yg12345    CPALL
 #	click login button Code 5016
 #	expect result Code 5016
-	Close Browser
 	
 Location Login WithOut AD Fail 5017
-
-	open allmap Web 
 	login with    thanar    yg12345    OTHER
 #	click login button Code 5017
 #	expect result Code 5017
-	Close Browser
 	
 
 
@@ -63,8 +45,6 @@ Location Login WithOut AD Fail 5017
 
 	
 *** Keywords ***
-open allmap Web
-	Open Browser    http://192.168.100.9:8080/allmap/jsp/login.jsp
 login with
     [Arguments]    ${username}    ${password}    ${domain}  
 	input text    username    ${username}
