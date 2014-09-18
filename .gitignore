@@ -6,3 +6,7 @@ allmap/.settings/
 allmap/target/
 allmap_robot/.project
 allMap/src/main/webapp/arcgis_js_api/
+allmap_robot/log.html
+allmap_robot/output.xml
+allmap_robot/report.html
+allmap_robot/selenium-screenshot-1.png
