@@ -1,6 +1,7 @@
 package allmap.service;
 
 import allmap.bean.UserBean;
+import allmap.constant.Constant;
 import allmap.dao.Layer;
 import allmap.dao.User;
 
@@ -16,17 +17,17 @@ public class UserService {
 				userBean = user.selectUser(username, password);
 				
 				if(userBean == null) {
-					throw new RuntimeException("5012");
+					throw new RuntimeException(Constant.EXCEPTION_CODE_LOGIN_NONAD_INVALID_PASSWORD);
 				}
 				
 				userBean.setLstLayer(layer.selectLayer(userBean.getUserId()));
 				
 			} else {
-				throw new RuntimeException("5013");
+				throw new RuntimeException(Constant.EXCEPTION_CODE_LOGIN_NONAD_INVALID_USERNAME);
 			}
 		} catch(Exception ex) {
 			ex.printStackTrace();
-			throw new RuntimeException("5000");
+			throw new RuntimeException(Constant.EXCEPTION_GLOBAL);
 		}
 		return userBean;
 	}
