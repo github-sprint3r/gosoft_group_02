@@ -1,0 +1,37 @@
+*** Settings ***
+Library    Selenium2Library
+
+
+*** Variables ***
+*** Testcases ***
+Location Login WithOut AD Pass
+	open allmap Web
+	input username
+	input password
+	choose domain
+	click login button
+	expect result Name
+	expect result GPS
+	expect result Layer	
+*** Keywords ***
+open allmap Web
+	Open Browser    http://192.168.100.5:8080/allmap
+input username
+	Input Text    username    thanarat
+input password
+	Input Text    password    yg1234
+choose domain
+	Select From List    domain    OTHER
+click login button
+	Click Button    loginButton
+expect result Name
+	Wait Until Page Contains    ธนรัฐ นิยมตรง
+expect result GPS
+	??????????????????????????
+expect result Layer
+	Click Link    layerButton
+	Wait Until Page Contains    ที่พักแนวราบ
+	Wait Until Page Contains    ที่พักแนวสูง
+	Wait Until Page Contains    แหล่งชุมชน
+	Wait Until Page Contains    7-11
+	Wait Until Page Contains    CP_ALL
