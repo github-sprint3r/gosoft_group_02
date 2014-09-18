@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
 			UserBean user = loginService.login(username, password, domain);
 			printJsonObject(user,response);
 		} catch (RuntimeException e) {
-			printJsonObject(new UserBean(),response);
+			printJsonObject(e.getMessage(),response);
 		}
 	}
 	
