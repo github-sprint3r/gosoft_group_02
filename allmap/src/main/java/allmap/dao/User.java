@@ -44,6 +44,35 @@ public class User {
 		return userBean;
 	}
 	
+	private static final String SQL_USER_AD = "SELECT * FROM USER WHERE USER_NAME=? AND IS_ACTIVE=1";
+	public UserBean selectUser(String username) throws SQLException {
+		UserBean userBean = null;
+		
+		try {
+			conn = AppConnection.getInstance().getConnection();
+			ps = (PreparedStatement) conn.prepareStatement(SQL_USER_AD);
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				userBean = new UserBean();
+				userBean.setUserId(rs.getInt("USER_ID"));
+				userBean.setUsername(rs.getString("USER_NAME"));
+				userBean.setDomainId(rs.getString("DOMAIN_ID"));
+				userBean.setFirstName(rs.getString("FIRSTNAME"));
+				userBean.setLastName(rs.getString("LASTNAME"));
+			}
+		} catch(SQLException ex) {
+			throw ex;
+		} finally{
+			if(conn != null){
+				conn.close();
+			}
+		}
+		
+		return userBean;
+	}
+	
 	private static final String SQL_USERNAME = "SELECT USER_NAME FROM USER WHERE USER_NAME=?";
 	public boolean checkUsername(String username) throws SQLException {
 		Boolean hasUsername = false;

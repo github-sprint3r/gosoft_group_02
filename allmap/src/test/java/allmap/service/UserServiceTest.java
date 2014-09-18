@@ -9,7 +9,7 @@ import allmap.bean.UserBean;
 
 //if you want to test should DBUnit and H2 
 public class UserServiceTest {
-	//UserService userService = new UserService();
+	UserService userService = new UserService();
 
 	/*@Test
 	public void authenuser_with_thanarat_isnotnull() throws Exception {

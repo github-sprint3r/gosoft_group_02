@@ -1,48 +1,36 @@
 package allmap.service;
 
-import java.util.List;
+import java.sql.SQLException;
 
-import allmap.bean.DomainBean;
 import allmap.bean.UserBean;
-import allmap.constant.Constant;
-import allmap.dao.Domain;
-import allmap.dao.Layer;
 import allmap.dao.User;
 
 public class UserService {
 
 	User user = new User();
-	Layer layer = new Layer();
-	Domain domain = new Domain();
-
-	public UserBean authenUser(String username, String password, String domainId) {
-		UserBean userBean = null;
+//	Layer layer = new Layer();
+//	Domain domain = new Domain();
+	
+	public UserBean getUser(String username, String password) {
+		UserBean userBean = new UserBean();
 		try {
-			
-			List<DomainBean> lstDomain = domain.selectDomain(Integer.parseInt(domainId));
-			if (lstDomain.get(0) == null) {
-				if (user.checkUsername(username)) {
-					userBean = user.selectUser(username, password);
-
-					if (userBean == null) {
-						throw new RuntimeException(
-								Constant.EXCEPTION_CODE_LOGIN_NONAD_INVALID_PASSWORD);
-					}
-
-					userBean.setLstLayer(layer.selectLayer(userBean.getUserId()));
-
-				} else {
-					throw new RuntimeException(
-							Constant.EXCEPTION_CODE_LOGIN_NONAD_INVALID_USERNAME);
-				}
-			} else {
-				// Authen AD code Here
-
-			}
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			throw new RuntimeException(Constant.EXCEPTION_GLOBAL);
+			userBean = user.selectUser(username, password);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userBean;
+	}
+	
+	public UserBean getUser(String username) {
+		UserBean userBean = new UserBean();
+		try {
+			userBean = user.selectUser(username);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return userBean;
 	}
