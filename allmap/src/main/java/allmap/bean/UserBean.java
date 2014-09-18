@@ -7,7 +7,7 @@ public class UserBean {
 	private String password;
 	private String firstName;
 	private String lastName;
-	private String domain;
+	private String domainId;
 	private boolean external;
 	
 	
@@ -41,11 +41,11 @@ public class UserBean {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getDomain() {
-		return domain;
+	public String getDomainId() {
+		return domainId;
 	}
-	public void setDomain(String domain) {
-		this.domain = domain;
+	public void setDomainId(String domainId) {
+		this.domainId = domainId;
 	}
 	public boolean isExternal() {
 		return external;

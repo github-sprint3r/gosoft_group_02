@@ -8,9 +8,5 @@ public class LoginService {
 		UserService userService = new UserService();
 		return userService.authenUser(username, password);
 	}
-	
-	public void connection() {
-		
-	}
 
 }
