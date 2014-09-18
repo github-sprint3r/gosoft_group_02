@@ -42,7 +42,7 @@ public class LdapServiceTest {
 		List<String> expectedMenuList = new ArrayList<String>();
 		List<String> resultMenuList = new ArrayList<String>();
 		expectedMenuList.add("Home");
-		expectedMenuList.add("ºÃÔËÒÃ¨Ñ´¡ÒÃàÁ¹Ù");
+		expectedMenuList.add("ï¿½ï¿½ï¿½ï¿½ï¿½Ã¨Ñ´ï¿½ï¿½ï¿½ï¿½yï¿½");
 		
 		resultMenuList = loginAuthen.checkMenu(usernameAdmin, domain);
 		
@@ -110,7 +110,7 @@ public class LdapServiceTest {
 
 				if (username == "sukit") {
 					menuList.add("Home");
-					menuList.add("ºÃÔËÒÃ¨Ñ´¡ÒÃàÁ¹Ù");
+					menuList.add("à¸à¸²à¸£à¸šà¸£à¸´à¸«à¸²à¸£à¸ˆà¸±à¸”à¸à¸²à¸£à¸ªà¸´à¸—à¸˜à¸´à¹Œ");
 				}
 				else if (username == "thanakrit"){
 					menuList.add("Home");
