@@ -6,37 +6,30 @@ Test Teardown    Close Browser
 *** Testcases ***
 Location Login WithOut AD Fail 5011
 	login with    thanarat    yg1234    CPALL
-#	click login button
 #	expect result Code 5011
 	
 Location Login WithOut AD Fail 5012	
 	login with    thanarat    yg    OTHER
-#	click login button
 #	expect result Code 5012
 	
 Location Login WithOut AD Fail 5013
 	login with    thanar    yg1234    OTHER
-#	click login button
 #	expect result Code 5013
 	
 Location Login WithOut AD Fail 5014
 	login with    thanarat    yg    CPALL
-#	click login button
 #	expect result Code 5014
 	
 Location Login WithOut AD Fail 5015
 	login with    thanar    yg12345    OTHER
-#	click login button Code 5015
 #	expect result Code 5015
 	
 Location Login WithOut AD Fail 5016
 	login with    thanar    yg12345    CPALL
-#	click login button Code 5016
 #	expect result Code 5016
 	
 Location Login WithOut AD Fail 5017
 	login with    thanar    yg12345    OTHER
-#	click login button Code 5017
 #	expect result Code 5017
 	
 
@@ -49,6 +42,8 @@ login with
     [Arguments]    ${username}    ${password}    ${domain}  
 	input text    username    ${username}
 	input text    password    ${password}
-	Click Button    domain_id    
-	CLick Link    ${domain}
+	#Click Button    domain_id    
+	#CLick Link    ${domain}
+	Select From List By Label    domain    ${domain}
+	Click Button    loginButton
 
