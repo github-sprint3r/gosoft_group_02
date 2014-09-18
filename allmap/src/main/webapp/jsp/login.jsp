@@ -10,6 +10,17 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 	   return false;
 	 
 });
+
+function submitLogin(){
+	if($("#username").val() == "") {
+		alert("กรุณากรอก username");
+	}else if($("#password").val() == "") {
+		alert("กรุณากรอก password");
+	}
+	/* else if($("#domain").val() == "") {
+		alert("กรุณากรอก เลือก Domain");
+	} */
+}
 </script>
 
 <form class="form-horizontal" id="loginfrom" name="loginfrom">
@@ -21,12 +32,14 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 				<label for="username" class="col-sm-3 control-label">Username</label>
 				<div class="col-sm-7">
 					<input type="text" class="form-control" id="username" name="username" class="form-control" maxlength="100">
+					<span id="errorUsername" style="color: red;display: none;" >กรุณากรอก Username</span>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="password" class="col-sm-3 control-label">Password</label>
 				<div class="col-sm-7">
 					<input type="password" class="form-control" id="password" name="password" class="form-control" maxlength="100">
+					<span id="errorPassword" style="color: red;display: none;">กรุณากรอก Password</span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -34,7 +47,7 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 				<div class="col-sm-7">
 				<div class="btn-group btn-input clearfix" style="width: 190px">
 					  <button id="domain_id" type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown">
-					    <span data-bind="label">yrdy ทดสอลบ</span> <span class="caret"></span>
+					    <span data-bind="label">CPALL</span> <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu" role="menu">
 					    <li id="cpall"><a href="#">CPALL</a></li>
@@ -43,9 +56,11 @@ $( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
 				</div>
 			   </div>
 			</div>
+			
+			 
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-7">
-					<button type="button" class="btn btn-lg btn-primary btn-block" onClick="location.href='../jsp/bench.jsp'">login</button> 
+					<button type="button" class="btn btn-lg btn-primary btn-block" onClick="submitLogin();">login</button> 
 				</div>
 			</div>
 		</div>
