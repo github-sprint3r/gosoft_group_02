@@ -16,17 +16,19 @@ import allmap.service.LoginService;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	LoginService loginService = new LoginService();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		doSubmit(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doSubmit(request, response);
+	}
+	
+	private void doSubmit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String domain = request.getParameter("domain");
@@ -37,7 +39,6 @@ public class Login extends HttpServlet {
 		} catch (RuntimeException e) {
 			printJsonObject(new UserBean(),response);
 		}
-
 	}
 	
 	private void  printJsonObject(Object obj,HttpServletResponse response)throws IOException{
