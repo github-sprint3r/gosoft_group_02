@@ -34,6 +34,10 @@ public class User {
 			}
 		} catch(SQLException ex) {
 			throw ex;
+		} finally{
+			if(conn != null){
+				conn.close();
+			}
 		}
 		
 		return userBean;
@@ -54,6 +58,10 @@ public class User {
 			}	
 		} catch(SQLException ex) {
 			throw ex;
+		} finally{
+			if(conn != null){
+				conn.close();
+			}
 		}
 		
 		return hasUsername;
