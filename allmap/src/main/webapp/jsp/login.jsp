@@ -41,7 +41,7 @@
 								openDialogError();
 							}
 							else{
-								window.location = "./main.jap?userId="+data.userId;
+								window.location = "./main.jsp?userId="+data.userId;
 							}
 						});
 					});
