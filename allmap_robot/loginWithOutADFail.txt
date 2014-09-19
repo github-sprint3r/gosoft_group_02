@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Selenium2Library
-Test Setup    Open Browser    http://192.168.100.9:8080/allmap/jsp/login.jsp
+Test Setup    Open Browser    http://localhost:8080/allmap/jsp/login.jsp
 Test Teardown    Close Browser
 *** Variables ***
 *** Testcases ***
