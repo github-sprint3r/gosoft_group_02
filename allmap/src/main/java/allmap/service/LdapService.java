@@ -54,14 +54,131 @@ public class LdapService {
 			} else {
 				throw new Exception(Constant.EXCEPTION_CODE_LOGIN_INVALID_DOMAIN); // Invalid domain
 			}
-			
-			
-			return;
  		} catch(Exception ex) {
- 			throw new Exception(ex.getMessage());
+ 			System.out.println(ex.getMessage());
+
+ 			throw new Exception(Constant.EXCEPTION_GLOBAL);
 		} finally {
 			
 		}
+			
+		// check username
+		System.out.println("username : "  + username);
+		checkLdapUserName(username, domainBean);
+			
+		// check username/passeword
+		try {
+			checkLdapUserNamePassword(username, password, domainBean);
+		} catch(Exception ex) {
+ 			if(ex.getMessage().contains("error code 49")) {
+ 				throw new Exception(Constant.EXCEPTION_CODE_LOGIN_INVALID_PASSWORD);
+ 			}
+ 			throw new Exception(Constant.EXCEPTION_GLOBAL);
+		}
+		
+		return;
+
 		
 	}
+	
+	
+	private void checkLdapUserName(String username, DomainBean domainBean) throws Exception {
+		Hashtable<String, String> env = new Hashtable<String, String>();
+        env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
+        env.put(Context.PROVIDER_URL, domainBean.getDomainURL());
+        env.put("com.sun.jndi.ldap.read.timeout", "2000");
+        
+        String searchFilter = "(cn=" + username + ")";
+        SearchControls searchCtls = new SearchControls();
+        searchCtls.setSearchScope(SearchControls.SUBTREE_SCOPE);
+        DirContext ctxGC = new InitialDirContext(env);
+        
+        NamingEnumeration<SearchResult> result = ctxGC.search(domainBean.getDomainSearchBase(), searchFilter, searchCtls);
+        
+//        if(result.next()) {
+//        	throw  new Exception(Constant.EXCEPTION_CODE_LOGIN_INVALID_USERNAME);
+//        }
+        
+        
+        
+        SearchResult sr = (SearchResult) result.next();
+        
+        System.out.println("sr : "  + sr.getNameInNamespace());
+//        
+//        Attributes attrs = sr.getAttributes();
+//        String key = "";
+//        Object value = "";
+//        Map amap = null;
+//        if (attrs != null) {
+//            amap = new HashMap();
+//            NamingEnumeration ne = attrs.getAll();
+//            Attribute attr = null;
+//            while (ne.hasMore()) {
+//              attr = (Attribute) ne.next();
+//              key = attr.getID();
+//              //set value
+//              if (attr.size() > 1) {
+//                  ArrayList temps = new ArrayList();
+//                  NamingEnumeration gg = attr.getAll();
+//                  while (gg.hasMore()) {
+//                      String temp = (String) gg.next();
+//                      temps.add(temp);
+//                  }
+//                  value = temps;
+//              } else {
+//                  value = attr.get();
+//              }
+//              amap.put(key, value);                 
+//              attr = null;
+//            }
+//        }
+	}
+	
+	private void checkLdapUserNamePassword(String username, String password, DomainBean domainBean) throws Exception {
+		Hashtable<String, String> env = new Hashtable<String, String>();
+        env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
+        env.put(Context.PROVIDER_URL, domainBean.getDomainURL());
+        env.put(Context.SECURITY_PRINCIPAL, "cn=" + username + "," + domainBean.getDomainSearchBase());
+        env.put(Context.SECURITY_CREDENTIALS, password);
+        env.put(Context.SECURITY_AUTHENTICATION, "simple");
+        env.put("com.sun.jndi.ldap.read.timeout", "2000");
+        
+        String searchFilter = "(cn=" + username + ")";
+        SearchControls searchCtls = new SearchControls();
+        searchCtls.setSearchScope(SearchControls.SUBTREE_SCOPE);
+        DirContext ctxGC = new InitialDirContext(env);
+        
+        NamingEnumeration<SearchResult> result = ctxGC.search(domainBean.getDomainSearchBase(), searchFilter, searchCtls);
+        
+        SearchResult sr = (SearchResult) result.next();
+        Attributes attrs = sr.getAttributes();
+        String key = "";
+        Object value = "";
+        Map amap = null;
+        if (attrs != null) {
+            amap = new HashMap();
+            NamingEnumeration ne = attrs.getAll();
+            Attribute attr = null;
+            while (ne.hasMore()) {
+              attr = (Attribute) ne.next();
+              key = attr.getID();
+              //set value
+              if (attr.size() > 1) {
+                  ArrayList temps = new ArrayList();
+                  NamingEnumeration gg = attr.getAll();
+                  while (gg.hasMore()) {
+                      String temp = (String) gg.next();
+                      temps.add(temp);
+                  }
+                  value = temps;
+              } else {
+                  value = attr.get();
+              }
+              amap.put(key, value);                 
+              attr = null;
+            }
+        }
+	}
+	
+	
 }
