@@ -56,7 +56,7 @@ public class LdapService {
 			}
  		} catch(Exception ex) {
  			System.out.println(ex.getMessage());
-
+ 			
  			throw new Exception(Constant.EXCEPTION_GLOBAL);
 		} finally {
 			
@@ -64,7 +64,7 @@ public class LdapService {
 			
 		// check username
 		System.out.println("username : "  + username);
-		checkLdapUserName(username, domainBean);
+		// checkLdapUserName(username, domainBean);
 			
 		// check username/passeword
 		try {
