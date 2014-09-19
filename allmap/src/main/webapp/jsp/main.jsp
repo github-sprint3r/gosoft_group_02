@@ -3,6 +3,9 @@
 
 <div class="container-map" id="divContentMap" style="height: 100%;">
 	<div id="divMap"></div>
+	<div style="position:absolute; top : 150px; right: 20px;">
+		<img alt="คลิกเพื่อแสดงเลเยอร์" src="../img/Layers-icon.png" style="margin-left: 100px; cursor:pointer;" id="imgDisplayLy" />
+	</div>
 </div>
 
 <jsp:include page="layout/footer.jsp" flush="false" />
@@ -29,13 +32,12 @@
 		async : true
 	};
 </script>
-<script src="../arcgis_js_api/library/3.10/3.10/init.js"></script>
+<script src="http://saavik:8080/allmap/arcgis_js_api/library/3.10/3.10/init.js"></script>
 <style type="text/css">
 @import
-	url("../arcgis_js_api/library/3.10/3.10/js/dojo/dijit/themes/claro/claro.css")
-	;
+	url("http://saavik:8080/allmap/arcgis_js_api/library/3.10/3.10/js/dojo/dijit/themes/claro/claro.css");
 
-@import url("../arcgis_js_api/library/3.10/3.10/js/esri/css/esri.css");
+@import url("http://saavik:8080/allmap/arcgis_js_api/library/3.10/3.10/js/esri/css/esri.css");
 </style>
 
 <script>
@@ -100,8 +102,14 @@
 					dom.byId("divMap");
 					
 					on(map, "load", lang.hitch(this, "_loadMap_complete"));
+					
+					on(dom.byId("imgDisplayLy"),"click",lang.hitch(this, "_imgDisplayLy_Click"));
 
 				});
+				
+				this._imgDisplayLy_Click = function(){
+					alert("_imgDisplayLy_Click");
+				};
 
 				this._loadMap_complete = function(mapEsri) {
 					//console.log("mapEsri", mapEsri);

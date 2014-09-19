@@ -15,7 +15,7 @@ Location Login WithOut AD Pass
 #	expect result Layer	
 *** Keywords ***
 open allmap Web
-	Open Browser    http://192.168.100.9:8080/allmap/jsp/login.jsp
+	Open Browser    http://192.168.1.12:8080/allmap/jsp/login.jsp
 input username
 	Input Text    username    thanarat
 input password
