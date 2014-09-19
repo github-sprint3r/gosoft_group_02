@@ -6,16 +6,19 @@
 <title>ALLMAP</title>
 <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../bootstrap-select/dropdowns-enhancement.css">
-<link rel="stylesheet" type="text/css" href="../css/claro.css">
 </head>
 <body class="claro">
 <div id="wrap">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- <script src="../bootstrap/js/bootstrap.min.js"></script> -->
 	  <!-- load Dojo -->
-<script src="../js/dojo.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"
+   		 data-dojo-config="async: true"></script> 
+   		 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dijit/themes/claro/claro.css" 
+   		 media="screen">
 
 	<script type="text/javascript" src="../bootstrap-select/dropdowns-enhancement.js"></script> 
+	
 	<div>
 		<img src="../img/headerallmap.png" width="100%" height="50px" />
 	</div>
