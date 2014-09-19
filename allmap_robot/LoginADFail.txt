@@ -1,0 +1,32 @@
+*** Setting ***
+Library    Selenium2Library
+Test Setup    Open Browser    http://192.168.1.12:8080/allmap/jsp/login.jsp
+Test Teardown    Close Browser
+
+*** Variables ***
+
+*** Testcases ***
+LOG IN AD >> Admin : Password
+	login with    sukit    sk1234    CPALL
+	#Admin แสดง ERROR 5002
+LOG IN AD >> Location : Password
+	login with    thanakrit   123    CPALL
+	#Admin แสดง ERROR 5002
+LOG IN AD >> Admin : Username
+	login with    suki    sk12345    CPALL
+	#Admin แสดง ERROR 5003
+LOG IN AD >> Location : Username
+	login with    thana    1234    CPALL
+	#Location แสดง ERROR 5003
+	
+*** Keywords ***
+login with
+    [Arguments]    ${username}    ${password}    ${domain}  
+	input text    username    ${username}
+	input text    password    ${password}
+	#Click Button    domain   
+	#CLick Link    ${domain}
+	Select From List By Label    domain    ${domain}
+	Click Button    loginButton	
+
+	

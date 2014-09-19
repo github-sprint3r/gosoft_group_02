@@ -22,45 +22,12 @@
 			document.getElementById("errorPassword").style.display="none";
 		}
 		
-	/* 	if(canLogin){
-			//encodePassword();
-			var frmData = $("#loginfrom").serializeArray();
-			$.ajax({
-				url : "../login",
-				data : frmData,
-			}).done(function(data) {
-				alert(data);
-			});  
-		} */
 		
-/* 		     function(dom, request, JSON, arrayUtil){
-		         // Results will be displayed in resultDiv
-		  
-		         // Request the JSON data from the server
-		         request.get("../login", {
-		             // Parse data from JSON to a JavaScript object
-		             handleAs: "json"
-		         }).then(function(data){
-		             // Display the data sent from the server
-		             if(data != ""){
-		            	 setErrorCode(data);
-		            	 openDialogError();
-		             }
-		         },
-		         function(error){
-		             // Display the error returned
-		         });
-		     }
-		 ); */
+		if(canLogin){
 			require([ "dojo/ready", "dojo/_base/lang", "dijit/registry",
 						"dojo/request/xhr", "dojo/json" ], function(ready, lang,
 						registry, xhr, JSON) {
 					ready(function() {
-						// drop down
-						// dojo.create("option", { value: "some1", innerHTML: "label of option1"}, mobileList);
-						// dojo.create("option", { value: "some2", innerHTML: "label of option2"}, mobileList);
-						// register : http://localhost:9080/sample/register
-						// output : [{"mobileId":"1","mobileName":"True"},{"mobileId":"2","mobileName":"AIS"},{"mobileId":"3","mobileName":"DTAC"}]
 						xhr("../login", {
 								query: {
 								'username': username,
@@ -69,32 +36,17 @@
 								},
 							handleAs : "json"
 						}).then(function(data) {
-							// alert("data : " + data);
-							//var parseData = JSON.stringify(data);
-							//alert(parseData);
 							if(typeof data.username == 'undefined'){
 								setErrorCode(JSON.stringify(data));
 								openDialogError();
 							}
 							else{
-								window.location = "./main.jap?userId="+data.userId;
+								window.location = "./main.jsp?userId="+data.userId;
 							}
-							// var data_0 = data[0];
-							// alert("data[0] : " + data[0]);
-							// alert("data[0] : " + data[0].mobileId + " : " + data[0].mobileName);
-							// alert(JSON.stringify(data));
-/* 							for ( var index in data) {
-								var mobile = data[index];
-								// alert(mobile.mobileId + " : " + mobile.mobileName);
-								dojo.create("option", {
-									value : mobile.mobileId,
-									innerHTML : mobile.mobileName
-								}, mobileList);
-							} */
 						});
 					});
 			});
-		
+		}
 		//test set error code  by yeamgood 
 		//setErrorCode("6002");
 		//openDialogError();
