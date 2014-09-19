@@ -64,8 +64,17 @@ public class LdapService {
 			
 		// check username
 		System.out.println("username : "  + username);
-		// checkLdapUserName(username, domainBean);
-			
+		 try {
+			 checkLdapUserName(username, domainBean);
+			} catch(Exception ex) {
+				System.out.println("usernameTest : "  + username);
+				System.out.println (ex.getMessage());
+	 			if(ex.getMessage()==null) {
+	 				throw new Exception(Constant.EXCEPTION_CODE_LOGIN_INVALID_USERNAME);
+	 			}
+	 			throw new Exception(Constant.EXCEPTION_GLOBAL);
+			}	
+		 
 		// check username/passeword
 		try {
 			checkLdapUserNamePassword(username, password, domainBean);
@@ -84,8 +93,13 @@ public class LdapService {
 	
 	private void checkLdapUserName(String username, DomainBean domainBean) throws Exception {
 		Hashtable<String, String> env = new Hashtable<String, String>();
+
+        
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.PROVIDER_URL, domainBean.getDomainURL());
+        env.put(Context.SECURITY_PRINCIPAL, domainBean.getDomainSearchBase());
+        env.put(Context.SECURITY_CREDENTIALS, "allmap");
+        env.put(Context.SECURITY_AUTHENTICATION, "simple");
         env.put("com.sun.jndi.ldap.read.timeout", "2000");
         
         String searchFilter = "(cn=" + username + ")";

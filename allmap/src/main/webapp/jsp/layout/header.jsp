@@ -18,7 +18,7 @@
    		 media="screen">
 
 	<script type="text/javascript" src="../bootstrap-select/dropdowns-enhancement.js"></script> 
-	<script type="text/javascript" src="../js/pbkdf2.js"></script> 
+	
 	<div>
 		<img src="../img/headerallmap.png" width="100%" height="50px" />
 	</div>

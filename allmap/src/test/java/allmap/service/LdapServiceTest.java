@@ -59,6 +59,24 @@ public class LdapServiceTest {
 		}
 	}
 	
+	@Test
+	public void admin_login_incorrect_username_should_unsuccess() {
+		try {
+			ldapService.authenUser(usernameAdminIncorrect, passwordIncorect, domainId);
+		} catch (Exception ex) {
+			assertEquals(Constant.EXCEPTION_CODE_LOGIN_INVALID_USERNAME, ex.getMessage());
+		}
+	}
+	
+	@Test
+	public void location_login_incorrect_username_should_unsuccess() {
+		try {
+			ldapService.authenUser(usernameLocationIncorrect, passwordIncorect, domainId);
+		} catch (Exception ex) {
+			assertEquals(Constant.EXCEPTION_CODE_LOGIN_INVALID_USERNAME, ex.getMessage());
+		}
+	}
+	
 	
 //	@Test
 //	public void admin_login_incorrect_username_should_unsuccess() {
@@ -76,7 +94,7 @@ public class LdapServiceTest {
 //		List<String> expectedMenuList = new ArrayList<String>();
 //		List<String> resultMenuList = new ArrayList<String>();
 //		expectedMenuList.add("Home");
-//		expectedMenuList.add("การบริหารจัดการสิทธิ์");
+//		expectedMenuList.add("เธ�เธฒเธฃเธ�เธฃเธดเธซเธฒเธฃเธ�เธฑเธ”เธ�เธฒเธฃเธชเธดเธ—เธ�เธดเน�");
 //		
 //		resultMenuList = loginAuthen.checkMenu(usernameAdmin, domainId);
 //		
@@ -144,7 +162,7 @@ public class LdapServiceTest {
 
 				if (username == "sukit") {
 					menuList.add("Home");
-					menuList.add("การบริหารจัดการสิทธิ์");
+					menuList.add("การบริการจัดการสิทธิ์");
 				}
 				else if (username == "thanakrit"){
 					menuList.add("Home");
