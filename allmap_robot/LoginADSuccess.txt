@@ -8,11 +8,11 @@ Test Teardown    Close Browser
 *** Testcases ***
 LOG IN >> Admin 
     login with    sukit    sk12345    CPALL
-    #Admin เข้าสู่หน้าจอ Menu
+    Go to Menu
 	
 LOG IN >> Location
 	login with    thanakrit    1234    CPALL
-    #Location เข้าสู่หน้าจอ Menu
+    Go to Menu
 	
 *** Keywords ***
 login with
@@ -21,11 +21,11 @@ login with
 	input text    password    ${password}
 	Select From List By Label    domain    ${domain}
 	Click Button    loginButton	
-	#Click Element    menu
-Admin เข้าสู่หน้าจอ Menu 
-	Wait Until Page Contains    สุกิจ กรีเจริญ
-	Wait Until Element Is Visible    HOME
-	Wait Until Element Is Visible    การบริหารจัดการสิทธิ์
-	Xpath Should Match X Times    //div[@id='my_element']    20
+
+Go to Menu
+	Wait Until Page Contains    Logout
+	Wait Until Page Contains    HOME
+
+	
 
 	
