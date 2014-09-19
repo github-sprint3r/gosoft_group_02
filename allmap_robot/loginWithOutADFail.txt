@@ -42,8 +42,6 @@ login with
     [Arguments]    ${username}    ${password}    ${domain}
 	input text    username    ${username}
 	input text    password    ${password}
-	#Click Button    domain_id    
-	#CLick Link    ${domain}
 	Select From List By Label    domain    ${domain}
 	Click Button    loginButton
 	
