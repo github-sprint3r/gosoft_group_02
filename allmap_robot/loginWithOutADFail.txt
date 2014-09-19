@@ -1,6 +1,6 @@
 *** Settings ***
 Library    Selenium2Library
-Test Setup    Open Browser    http://localhost:8080/allmap/jsp/login.jsp
+Test Setup    Open Browser    http://192.168.1.12:8080/allmap/jsp/login.jsp
 Test Teardown    Close Browser
 *** Variables ***
 *** Testcases ***
@@ -39,11 +39,9 @@ Location Login WithOut AD Fail 5017
 	
 *** Keywords ***
 login with
-    [Arguments]    ${username}    ${password}    ${domain}  
+    [Arguments]    ${username}    ${password}    ${domain}
 	input text    username    ${username}
 	input text    password    ${password}
-	#Click Button    domain_id    
-	#CLick Link    ${domain}
 	Select From List By Label    domain    ${domain}
 	Click Button    loginButton
-
+	
