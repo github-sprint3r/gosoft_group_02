@@ -13,11 +13,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<!-- <script src="../bootstrap/js/bootstrap.min.js"></script> -->
 	  <!-- load Dojo -->
-<!--    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dojo/dojo.js"
-   		 data-dojo-config="async: true"></script> 
-   		 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.1/dijit/themes/claro/claro.css" 
-   		 media="screen"> -->
-   	<!-- <script src="http://saavik:8080/allmap/arcgis_js_api/library/3.10/3.10/init.js"></script> -->
 <script src="../js/dojo.js"></script>
 
 	<script type="text/javascript" src="../bootstrap-select/dropdowns-enhancement.js"></script> 
